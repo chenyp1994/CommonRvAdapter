@@ -38,13 +38,15 @@ public abstract class BaseCommonRvAdapter<T> extends RecyclerView.Adapter<Recycl
         RecyclerView.ViewHolder holder = null;
         switch (viewType) {
             case 0:
-                holder = new RvConvertViewHolder(parent, onCreateAdapterItem(viewType));
+                RvConvertViewHolder.AdapterItem item = onCreateAdapterItem(viewType);
+                holder = new RvConvertViewHolder(item.onCreateView(parent), item);
                 break;
             case HEADER:
                 holder = new ViewHolder(helper.getHeaderLayout());
                 break;
             case LOAD_MORE:
-                holder = new LoadMoreRvViewHolder(parent, helper.getLoadMoreItem());
+                LoadMoreRvViewHolder.AdapterItem loadMoreItem = helper.getLoadMoreItem();
+                holder = new LoadMoreRvViewHolder(loadMoreItem.onCreateView(parent), loadMoreItem);
                 break;
             case FOOTER:
                 holder = new ViewHolder(helper.getFooterLayout());
