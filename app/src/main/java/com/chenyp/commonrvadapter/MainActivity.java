@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
     }
 
-    private class TextItem implements RvConvertViewHolder.AdapterItem<String> {
+    private class TextItem extends SimpleItem<String> {
 
         private TextView text;
 
