@@ -42,17 +42,17 @@ public abstract class BaseCommonRvAdapter<T> extends RecyclerView.Adapter<Recycl
                 holder = new RvConvertViewHolder(item.onCreateView(parent), item);
                 break;
             case HEADER:
-                holder = new ViewHolder(helper.getHeaderLayout());
+                holder = new SimpleViewHolder(helper.getHeaderLayout());
                 break;
             case LOAD_MORE:
                 LoadMoreRvViewHolder.AdapterItem loadMoreItem = helper.getLoadMoreItem();
                 holder = new LoadMoreRvViewHolder(loadMoreItem.onCreateView(parent), loadMoreItem);
                 break;
             case FOOTER:
-                holder = new ViewHolder(helper.getFooterLayout());
+                holder = new SimpleViewHolder(helper.getFooterLayout());
                 break;
             case EMPTY:
-                holder = new ViewHolder(helper.getEmptyView());
+                holder = new SimpleViewHolder(helper.getEmptyView());
                 break;
             default:
                 break;
@@ -68,7 +68,7 @@ public abstract class BaseCommonRvAdapter<T> extends RecyclerView.Adapter<Recycl
             holder.item.convert(getItem(position), position);
         } else if (viewHolder instanceof LoadMoreRvViewHolder) {
             LoadMoreRvViewHolder holder = (LoadMoreRvViewHolder) viewHolder;
-        } else if (viewHolder instanceof ViewHolder) {
+        } else if (viewHolder instanceof SimpleViewHolder) {
 
         }
     }
@@ -161,9 +161,9 @@ public abstract class BaseCommonRvAdapter<T> extends RecyclerView.Adapter<Recycl
         return itemCount;
     }
 
-    private static class ViewHolder extends RecyclerView.ViewHolder {
+    private static class SimpleViewHolder extends RecyclerView.ViewHolder {
 
-        public ViewHolder(View itemView) {
+        public SimpleViewHolder(View itemView) {
             super(itemView);
         }
     }
