@@ -2,19 +2,13 @@ package com.chenyp.commonrvadapter;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
 
-import com.chenyp.library.BaseCommonRvAdapter;
-import com.chenyp.library.RvConvertViewHolder;
-import com.chenyp.library.ViewHelperAdapterItem;
-import com.chenyp.library.loadmore.LoadMoreRvViewHolder;
-import com.chenyp.library.loadmore.OnLoadMoreListener;
-import com.chenyp.library.util.ViewHelper;
+import com.chenyp.adapter.BaseCommonRvAdapter;
+import com.chenyp.adapter.RvConvertViewHolder;
 
 import java.util.ArrayList;
 import java.util.List;
