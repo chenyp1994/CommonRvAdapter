@@ -1,5 +1,6 @@
 package com.chenyp.adapter.loadmore;
 
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,6 +26,7 @@ public class DefaultLoadMoreItem implements LoadMoreRvViewHolder.AdapterItem {
         holder.itemView.setOnClickListener(onClickListener);
     }
 
+    @NonNull
     @Override
     public View onCreateView(ViewGroup parent) {
         return LayoutInflater.from(parent.getContext()).inflate(R.layout.load_more_default_footer, parent, false);

@@ -1,6 +1,7 @@
 package com.chenyp.commonrvadapter;
 
 import android.support.annotation.LayoutRes;
+import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import com.chenyp.adapter.RvConvertViewHolder;
 
 public abstract class SimpleItem<T> implements RvConvertViewHolder.AdapterItem<T> {
 
+    @NonNull
     @Override
     public View onCreateView(ViewGroup parent) {
         return LayoutInflater.from(parent.getContext()).inflate(getLayoutRes(), parent, false);

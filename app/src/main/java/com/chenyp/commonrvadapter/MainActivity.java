@@ -34,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
             }
 
         };
+        adapter.getHelper().setEmptyEnable(true);
+        adapter.getHelper().setEmptyView(LayoutInflater.from(this).inflate(R.layout.rv_item_test, null, false));
         for (int i = 0; i < 3; i++) {
             View view = LayoutInflater.from(this).inflate(R.layout.load_more_default_footer, null, false);
             TextView textView = (TextView) view.findViewById(R.id.load_more_default_footer_text_view);
