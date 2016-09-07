@@ -23,3 +23,22 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+ext {
+    // Sdk and tools
+    groupId = 'com.chenyp.adapter'
+    compileSdkVersion = 24
+    buildToolsVersion = '24.0.2'
+    minSdkVersion = 11
+    targetSdkVersion = 24
+    versionName = '1.0.0'
+    versionCode = 1
+
+    // App dependencies
+    supportLibraryVersion = '24.2.0'
+
+    //Testing
+    jUnitVersion = '4.12'
+    espressoVersion = '2.2.2'
+
+}
