@@ -94,7 +94,9 @@ public class HFELHelper {
                 StaggeredGridLayoutManager mStaggeredGridLayoutManager = (StaggeredGridLayoutManager) recyclerView.getLayoutManager();
                 visibleItemCount = recyclerView.getChildCount();
                 totalItemCount = mStaggeredGridLayoutManager.getItemCount();
-                firstPositions = new int[mStaggeredGridLayoutManager.getSpanCount()];
+                if (firstPositions == null) {
+                    firstPositions = new int[mStaggeredGridLayoutManager.getSpanCount()];
+                }
                 firstVisibleItem = findMax(firstPositions);
                 mStaggeredGridLayoutManager.findFirstVisibleItemPositions(firstPositions);
             }
