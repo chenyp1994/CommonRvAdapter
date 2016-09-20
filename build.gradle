@@ -31,11 +31,11 @@ ext {
     buildToolsVersion = '24.0.2'
     minSdkVersion = 11
     targetSdkVersion = 24
-    versionName = '1.0.3'
+    versionName = '1.0.4'
     versionCode = 1
 
     // App dependencies
-    supportLibraryVersion = '24.2.0'
+    supportLibraryVersion = '24.2.1'
 
     //Testing
     jUnitVersion = '4.12'
