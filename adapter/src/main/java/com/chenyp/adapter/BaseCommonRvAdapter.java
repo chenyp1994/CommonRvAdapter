@@ -37,10 +37,6 @@ public abstract class BaseCommonRvAdapter<T> extends RecyclerView.Adapter<Recycl
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         RecyclerView.ViewHolder holder = null;
         switch (viewType) {
-            case 0:
-                RvConvertViewHolder.AdapterItem item = onCreateAdapterItem(viewType);
-                holder = new RvConvertViewHolder(item.onCreateView(parent), item);
-                break;
             case HEADER:
                 holder = new SimpleViewHolder(helper.getHeaderLayout());
                 break;
@@ -55,6 +51,8 @@ public abstract class BaseCommonRvAdapter<T> extends RecyclerView.Adapter<Recycl
                 holder = new SimpleViewHolder(helper.getEmptyView());
                 break;
             default:
+                RvConvertViewHolder.AdapterItem item = onCreateAdapterItem(viewType);
+                holder = new RvConvertViewHolder(item.onCreateView(parent), item);
                 break;
         }
         return holder;

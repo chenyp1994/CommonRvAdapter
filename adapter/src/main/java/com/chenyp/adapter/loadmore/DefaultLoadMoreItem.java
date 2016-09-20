@@ -24,6 +24,7 @@ public class DefaultLoadMoreItem implements LoadMoreRvViewHolder.AdapterItem {
         mTextView = (TextView) holder.itemView.findViewById(R.id.load_more_default_footer_text_view);
         mProgressBar = (ProgressBar) holder.itemView.findViewById(R.id.load_more_default_footer_progress_bar);
         holder.itemView.setOnClickListener(onClickListener);
+        holder.itemView.setVisibility(View.GONE);
     }
 
     @NonNull
