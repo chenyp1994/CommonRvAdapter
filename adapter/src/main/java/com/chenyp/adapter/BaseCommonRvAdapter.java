@@ -63,7 +63,7 @@ public abstract class BaseCommonRvAdapter<T> extends RecyclerView.Adapter<Recycl
         if (viewHolder instanceof RvConvertViewHolder) {
             RvConvertViewHolder holder = (RvConvertViewHolder) viewHolder;
             //noinspection unchecked
-            holder.item.convert(getItem(position), position);
+            holder.item.convert(getItem(position), position - helper.getHeaderLayoutCount());
         } else if (viewHolder instanceof LoadMoreRvViewHolder) {
             LoadMoreRvViewHolder holder = (LoadMoreRvViewHolder) viewHolder;
         } else if (viewHolder instanceof SimpleViewHolder) {
