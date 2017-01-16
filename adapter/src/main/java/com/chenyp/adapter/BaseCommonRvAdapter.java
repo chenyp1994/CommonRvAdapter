@@ -193,7 +193,7 @@ public abstract class BaseCommonRvAdapter<T> extends RecyclerView.Adapter<Recycl
     }
 
     public void addAll(List<T> data) {
-        addAll(mData.size() - 1, data);
+        addAll(mData.size(), data);
     }
 
     public void addAll(int position, List<T> data) {
