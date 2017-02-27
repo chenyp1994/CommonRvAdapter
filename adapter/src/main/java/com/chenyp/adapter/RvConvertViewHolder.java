@@ -11,13 +11,17 @@ public class RvConvertViewHolder extends RecyclerView.ViewHolder {
 
     public AdapterItem item;
 
-    public RvConvertViewHolder(View itemView, AdapterItem item) {
+    public RvConvertViewHolder(View itemView, AdapterItem item, BaseCommonRvAdapter adapter) {
         super(itemView);
         this.item = item;
         item.initViewHolder(this);
+        //noinspection unchecked
+        item.bind(adapter);
     }
 
     public interface AdapterItem<T> extends BaseAdapterItem {
+
+        void bind(BaseCommonRvAdapter<T> adapter);
 
         void convert(T t, int position);
 

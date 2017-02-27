@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 2; i >= 0; i--) {
             View view = LayoutInflater.from(this).inflate(R.layout.load_more_default_footer, null, false);
             TextView textView = (TextView) view.findViewById(R.id.load_more_default_footer_text_view);
-            textView.setText(textView.getText().toString() + i);
+            textView.setText(textView.getText().toString() + i + "");
             if (i == 1) {
                 adapter.getHelper().addFooterView(view, 0);
             } else {
@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
     }
 
-    private class TextItem extends SimpleItem<String> {
+    private class TextItem extends BaseRvAdapterItem<String> {
 
         private TextView text;
 

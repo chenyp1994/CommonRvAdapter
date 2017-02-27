@@ -52,7 +52,7 @@ public abstract class BaseCommonRvAdapter<T> extends RecyclerView.Adapter<Recycl
                 break;
             default:
                 RvConvertViewHolder.AdapterItem item = onCreateAdapterItem(viewType);
-                holder = new RvConvertViewHolder(item.onCreateView(parent), item);
+                holder = new RvConvertViewHolder(item.onCreateView(parent), item, this);
                 break;
         }
         return holder;

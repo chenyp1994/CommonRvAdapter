@@ -2,17 +2,23 @@ package com.chenyp.commonrvadapter;
 
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.chenyp.adapter.BaseCommonRvAdapter;
 import com.chenyp.adapter.RvConvertViewHolder;
 
 /**
  * Created by chenyp on 16/9/5.
  */
 
-public abstract class SimpleItem<T> implements RvConvertViewHolder.AdapterItem<T> {
+public abstract class BaseRvAdapterItem<T> implements RvConvertViewHolder.AdapterItem<T> {
+
+    protected BaseCommonRvAdapter<T> adapter;
+
+    protected RecyclerView.ViewHolder holder;
 
     @NonNull
     @Override
@@ -23,4 +29,13 @@ public abstract class SimpleItem<T> implements RvConvertViewHolder.AdapterItem<T
     @LayoutRes
     public abstract int getLayoutRes();
 
+    @Override
+    public void initViewHolder(RecyclerView.ViewHolder holder) {
+        this.holder = holder;
+    }
+
+    @Override
+    public void bind(BaseCommonRvAdapter<T> adapter) {
+        this.adapter = adapter;
+    }
 }
